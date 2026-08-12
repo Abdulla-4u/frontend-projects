@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+
+:root{
+  --white: #FFFFFF;
+  --lightgray: #E5E5E0;
+  --darkgray: #DADAD3;
+  --red: #E60023;
+  --darkred: #CC001F;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer {
+  animation: shimmer 1.4s infinite;
+}
