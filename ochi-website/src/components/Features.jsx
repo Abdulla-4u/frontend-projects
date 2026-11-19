@@ -1,42 +1,46 @@
-import { motion, useAnimation } from "framer-motion";
-import React from "react";
 import Card from "./Card";
-import {Projects} from "../../public/Constant/Constant"
-import Button from "./Button";
-import { MdArrowOutward } from "react-icons/md";
+import { Projects } from "../constant/constant"
+import CaseStudiesButton from "./CaseStudiesButton ";
 
 const Features = () => {
- {/* hover:scale-[.96] */}
-
-
   return (
-    <div className="relative w-full mb-10 z-30 bg-zinc-50">
-      <h3 className="font-NeueMontreal text-[4vw] pt-10 px-10">
+    <section className="relative z-30 mb-10 w-full bg-[#F1F1F1]">
+      {/* Section Heading */}
+      <h3
+        className="
+          px-5 pt-10
+          font-NeueMontreal
+          text-[clamp(1.5rem,4vw,3.5rem)]
+          tracking-tight
+          text-[#212121]
+          sm:px-8
+          lg:px-10
+        "
+      >
         Featured projects
       </h3>
-      <div className="divider w-full h-[1px] my-8 bg-[#D2D2D2]"></div>
 
-    <div className="relative grid sm:grid-cols-2 w-full gap-x-4 gap-y-10 px-10">
-        {Projects.map((item, i) =>(
-            <Card key={i} item={item} index={i} />
+      {/* Divider */}
+      <div className="my-6 h-px w-full bg-[#D2D2D2] sm:my-8" />
+
+      {/* Projects Grid */}
+      <div
+        className="
+          relative grid w-full grid-cols-1
+          gap-x-4 gap-y-8
+          px-5 pb-5
+          md:grid-cols-2 sm:gap-y-10 sm:px-8
+          md:px-10
+        "
+      >
+        {Projects.map((item, i) => (
+          <Card key={i} item={item} index={i} />
         ))}
-    </div>
+      </div>
 
-        <div className="w-full flex items-center justify-center  py-10">
-
-                <button className="bg-zinc-950 text-white h-16 w-72 rounded-[3rem] flex justify-center items-center space-x-4 relative group">
-          <span className="font-NeueMontreal text-lg w-fit uppercase">
-            View All Case Studies
-          </span>
-          <span className="bg-white dot h-10 w-10 flex items-center justify-center rounded-full overflow-hidden relative transition-all duration-300 ease-in-out">
-            <MdArrowOutward className="text-xl absolute transition-transform duration-300 ease-in-out transform scale-75 group-hover:scale-125" />
-          </span>
-        </button>
-
-
-        </div>
-     
-    </div>
+      {/* Button */}
+      <CaseStudiesButton />
+    </section>
   );
 };
 

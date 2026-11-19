@@ -1,16 +1,62 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from "framer-motion";
 
 const Marquee = () => {
   return (
-    <div className='bg-[#004D43] relative w-full py-14 pt-20 rounded-tl-2xl rounded-tr-2xl z-20'>
-        <div className='flex whitespace-nowrap border-t-[1px] border-b-[1px] overflow-hidden border-zinc-300'>
-            {Array(10).fill().map((_, index) => (
-              <motion.h1 initial={{x: '0'}} animate={{x: '-100%'}} transition={{ease: 'linear', repeat: Infinity, duration: 8}} key={index} className="text-white uppercase text-[27vw] leading-[.7] font-FoundersGrotesk pt-1 pb-8 pr-14">We are ochi</motion.h1>
-            ))}
-        </div>
-    </div>
-  )
-}
+    <section
+      className="
+        relative z-20 w-full overflow-hidden
+        rounded-tl-2xl rounded-tr-2xl
+        bg-[#004D43]
+        pt-14 sm:pt-16 lg:pt-20
+      "
+    >
+      {/* Marquee content */}
+      <div
+        className="
+        overflow-hidden 
+        pt-2 pb-6
+        sm:pt-3 sm:pb-8
+        lg:pt-4 lg:pb-10
+      "
+      >
+        <motion.div
+          className="flex w-max border-2 pb-4 border-[#427B73]"
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
+          transition={{
+            ease: "linear",
+            duration: 12,
+            repeat: Infinity,
+          }}
+        >
+          <div
+            className="
+            shrink-0 whitespace-nowrap pr-8
+            font-FoundersGrotesk uppercase
+            text-[clamp(5rem,28vw,30rem)]
+            leading-[0.7] text-white
+            sm:pr-12 lg:pr-14
+          "
+          >
+            We are ochi
+          </div>
 
-export default Marquee
+          <div
+            aria-hidden="true"
+            className="
+              shrink-0 whitespace-nowrap pr-8
+              font-FoundersGrotesk uppercase
+              text-[clamp(5rem,28vw,30rem)]
+              leading-[0.7] text-white
+              sm:pr-12 lg:pr-14
+            "
+          >
+            We are ochi
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Marquee;

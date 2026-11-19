@@ -4,13 +4,19 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
       fontFamily: {
-        FoundersGrotesk: ['FoundersGrotesk', 'sans-serif'],
-        NeueMontreal: ['NeueMontreal', 'sans-serif'],
+        FoundersGrotesk: ["FoundersGrotesk", "sans-serif"],
+        NeueMontreal: ["NeueMontreal", "sans-serif"],
+      },
+
+      maxWidth: {
+        container: "1440px",
       },
     },
   },
+
   plugins: [],
-}
+};
