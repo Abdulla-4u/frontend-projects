@@ -3,196 +3,95 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'FoundersGrotesk';
-    src: url('/public/fonts/FoundersGrotesk-Semibold.woff') format('woff'),
-         url('/public/fonts/FoundersGrotesk-Semibold.woff2') format('woff2');
-  }
+  font-family: "FoundersGrotesk";
+  src: url("/fonts/FoundersGrotesk-Semibold.woff2") format("woff2"),
+       url("/fonts/FoundersGrotesk-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+
 @font-face {
-    font-family: 'NeueMontreal';
-    src: url('/public/fonts/NeueMontreal-Regular.woff') format('woff'),
-         url('/public/fonts/NeueMontreal-Regular.woff2') format('woff2');
-  }
-
-  .title::before {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: black;
-    left: 0; /* Place it at the start of the title */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-  }
-  
+  font-family: "NeueMontreal";
+  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff2"),
+       url("/fonts/NeueMontreal-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
 
 
-/*For Nav link  */
+/* Navigation link*/
 
 .button {
   --width: 100px;
   --height: 35px;
+
   width: var(--width);
   height: var(--height);
   position: relative;
   text-align: center;
   border-radius: 0.45em;
-  font-family: "Arial";
+  font-family: "NeueMontreal", sans-serif;
   cursor: pointer;
-  transition: transform 0.3s;
 }
 
- .text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.button-wrapper, .text, .icon {
+.button-wrapper,
+.button .text,
+.button .icon {
   overflow: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
+}
+
+.button .text {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #282727;
 }
 
-.text {
-  top: 0;
-}
-
-.text, .icon {
-  transition: top 0.4s;
-}
-
-.icon {
-  color: #131212;
+.button .icon {
   top: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #131212;
 }
 
-
-.button:hover .text {
-  top: -100%;
+.button .text,
+.button .icon {
+  transition: top 0.4s ease;
 }
 
-.button:hover .icon {
-  top: 0;
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .text {
+    top: -100%;
+  }
+
+  .button:hover .icon {
+    top: 0;
+  }
 }
 
-/*End Nav link   */
+/*End Nav link */
 
 
 
-.btn__icon,
-.btn__text {
-  position: relative;
-  z-index: 3;
-}
-
-/* Styles for the button icon */
-/* .btn__icon {
-  flex-shrink: 0;
-  width: 4.2rem;
-  height: 4.2rem;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: -1.4rem -1.7rem;
-  font-size: 1rem;
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-} */
-
-/* Icon hover enhancements */
-/* .btn__icon:before {
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-} */
-
-/* .btn__icon:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background-color: currentColor;
-  transform: scale(0.2);
-  transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-} */
-
-/* Button hover effects */
-
-/* .btn:hover .btn__icon:after {
-  transform: scale(1);
-} */
-
-/* Base button styles */
-
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  cursor: pointer;
-  font-family: NeueMontreal, Roboto, sans-serif;
-  /* font-size: 1.4rem; */
-  line-height: 1;
-  font-weight: 400;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
 
 
 
-/* Button hover background fill */
-.btn:after {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: -3rem;
-  right: -3rem;
-  bottom: -100%;
-  background: currentColor;
-  border-radius: 50%;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.btn:hover:after {
-  transform-origin: bottom;
-  transform: scaleY(1);
-}
 
 
 
-.but:hover .btn__text{
-  color: #fff;
-}
 
 
-.btn--default {
-  color: #212121;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px #212121;
-}
-
-/* Small button variant */
 
 
-/* Disabled button state */
-.btn:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
+
+
+
+
 
 
