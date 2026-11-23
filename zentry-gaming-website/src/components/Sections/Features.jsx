@@ -38,7 +38,8 @@ const BentoTilt = ({ children, className = "" }) => {
   );
 };
 
-const BentoCard = ({ src, title, description, isComingSoon }) => {
+
+const BentoCard = ({ src, title, description}) => {
   return (
     <div className="relative size-full">
       <video
@@ -59,10 +60,12 @@ const BentoCard = ({ src, title, description, isComingSoon }) => {
     </div>
   );
 };
+
+
 const Features = () => {
   return (
     <section className="bg-black pb-52">
-      <div className="container mx-auto px-3 md:px-10 pb-32">
+      <div className="container mx-auto px-6 md:px-10 pb-32">
         <div className="px-5 py-32">
           <p className="font-circular-web text-lg text-blue-50">
             Into the Metagame Layer
@@ -73,8 +76,8 @@ const Features = () => {
             experience on your world.
           </p>
         </div>
-
-        <BentoTilt className="border-hsla relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65]">
+       
+        <BentoTilt className="border-hsla relative mb-3 md:mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65]">
           <BentoCard
             src="videos/feature-1.mp4"
             title={
@@ -87,7 +90,7 @@ const Features = () => {
           />
         </BentoTilt>
 
-        <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-7">
+        <div className="grid h-[135vh] grid-cols-2 grid-rows-3 gap-3 md:gap-7">
           <BentoTilt className="bento-tilt_1 row-span-1 md:col-span-1 md:row-span-2">
             <BentoCard
               src="videos/feature-2.mp4"
