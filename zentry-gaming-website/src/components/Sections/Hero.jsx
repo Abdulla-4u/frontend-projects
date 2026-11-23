@@ -1,12 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-import Button from "./Button";
+import Button from "../Button";
+import Loader from "../Loader";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+
   const [currentVideoIndex, setCurrentVideoIndex] = useState(1);
   const [hasClicked, setHasClicked] = useState(false);
   const [loadedVideos, setLoadedVideos] = useState(0);
@@ -78,15 +81,7 @@ const Hero = () => {
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
-      {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-blue-50">
-          <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-          </div>
-        </div>
-      )}
+      {loading && <Loader />}
 
       <div
         id="video-frame"
@@ -116,7 +111,7 @@ const Hero = () => {
             ref={nextVideoRef}
             src={getVideoSrc(currentVideoIndex)}
             loop
-            muted
+            muted playsInline
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center"
             onLoadedData={handleVideoLoad}
@@ -127,7 +122,7 @@ const Hero = () => {
             )}
             autoPlay
             loop
-            muted
+            muted playsInline
             className="absolute left-0 top-0 size-full object-cover object-center"
             onLoadedData={handleVideoLoad}
           />
